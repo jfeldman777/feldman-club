@@ -11,7 +11,24 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from machina import get_apps as get_machina_apps
+from machina import MACHINA_MAIN_TEMPLATE_DIR
+from machina import MACHINA_MAIN_STATIC_DIR
+SITE_ID = 1
+STATICFILES_DIRS = (
+    # ...
+    MACHINA_MAIN_STATIC_DIR,
+)
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'machina_attachments': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/tmp',
+    },
+}
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,19 +42,44 @@ SECRET_KEY = 'qi_114_xi5%3f^e@-qrg5amv116oaxrq4(@-(&xq0m2^872cx7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['feldman-club.herokuapp.com',
+        'localhost',
+        '127.0.0.1',
+    ]
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+    },
+}
 
 # Application definition
+#LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/'
 
 INSTALLED_APPS = [
+    'club.apps.ClubConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'django.contrib.sites',
+    'django_comments',
+    'tagging',
+    'zinnia',
+     # Machina related apps:
+    'mptt',
+    'haystack',
+    'widget_tweaks',
+
+    'quiz',
+    'multichoice',
+    'true_false',
+    'essay',
+
+] + get_machina_apps()
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -47,6 +89,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+     # Machina
+    'machina.apps.forum_permission.middleware.ForumPermissionMiddleware',
 ]
 
 ROOT_URLCONF = 'feldman2017.urls'
@@ -54,15 +99,27 @@ ROOT_URLCONF = 'feldman2017.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': ['templates',
+                MACHINA_MAIN_TEMPLATE_DIR,
+                ],
+        #'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'django.template.context_processors.i18n',
+                'zinnia.context_processors.version',  # Optional
+                 # Machina
+                'machina.core.context_processors.metadata',
             ],
+
+            'loaders': [######################
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ]################
         },
     },
 ]
@@ -116,5 +173,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+LOGOUT_REDIRECT_URL = '/'
+
+#reset password tools
+'''
+Also needed is the Python command line email server:
+python -m smtpd -n -c DebuggingServer localhost:2525
+'''
+if DEBUG:
+    EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = 'localhost', 2525, None, None
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
