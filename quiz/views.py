@@ -154,7 +154,9 @@ class QuizTake(FormView):
 
         return super(QuizTake, self).dispatch(request, *args, **kwargs)
 
-    def get_form(self, form_class):
+    def get_form(self, form_class=None): 
+        if form_class is None:
+            form_class = self.get_form_class()
         if self.logged_in_user:
             self.question = self.sitting.get_first_question()
             self.progress = self.sitting.progress()
