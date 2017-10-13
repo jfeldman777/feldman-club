@@ -1,0 +1,71 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>feldman-club</title>
+        <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+
+    <body>
+      <div class="container">
+        <span class="pull-right">
+
+    {% if user.is_anonymous %}
+        {% include 'login.html' %}
+    {% else %}
+      {{ form.username.label_tag }}
+      {{ user }}
+
+<a href="{% url 'logout' %}" class="btn btn-primary">
+  {% trans 'LOGOUT' %}
+  <span class="glyphicon glyphicon-log-out"></span></a>
+
+  <a href="{% url 'password_change' %}" class="btn btn-warning">
+    <span class="glyphicon glyphicon-lock"></span>
+{% trans 'Change Password' %}
+  </a>
+      {% endif %}
+    </span>
+    </div>
+    <div class="container">
+ <div class="jumbotron">
+    {% block content %}
+    {% endblock content %}
+    </div></div>
+
+      {% if user.is_anonymous %}
+      {% else %}
+    <div class="container">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" href="quiz/" target="quiz">
+            {% trans 'Start new exam' %}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz/progress/" target="progress">
+            {% trans 'Look at previous ones' %}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="weblog/" target="weblog">
+            {% trans 'Blog' %}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="forum/" target="forum">
+            {% trans 'Forum' %}
+          </a>
+        </li>
+      </ul>
+
+</div>
+</div>
+{% endif %}
+        </body>
+    </html>

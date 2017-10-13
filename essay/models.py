@@ -8,7 +8,7 @@ from quiz.models import Question
 class Essay_Question(Question):
 
     def check_if_correct(self, guess):
-        return False
+        return True #False
 
     def get_answers(self):
         return False

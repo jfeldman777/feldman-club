@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-quiz-essay\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-02 16:32+0000\n"
+"POT-Creation-Date: 2017-10-13 17:16+0300\n"
 "PO-Revision-Date: 2015-08-21 19:40+0500\n"
 "Last-Translator: \n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -18,10 +18,10 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: models.py:23
+#: .\essay\models.py:26
 msgid "Essay style question"
 msgstr "Эссе"
 
-#: models.py:24
+#: .\essay\models.py:27
 msgid "Essay style questions"
 msgstr "Эссе"

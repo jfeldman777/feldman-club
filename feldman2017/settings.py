@@ -9,11 +9,13 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
+from django.utils.translation import ugettext_lazy as _
 import os
 from machina import get_apps as get_machina_apps
 from machina import MACHINA_MAIN_TEMPLATE_DIR
 from machina import MACHINA_MAIN_STATIC_DIR
+
+# Tell Django where the project's translation files should be.
 SITE_ID = 1
 STATICFILES_DIRS = (
     # ...
@@ -89,7 +91,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    'django.middleware.locale.LocaleMiddleware',
      # Machina
     'machina.apps.forum_permission.middleware.ForumPermissionMiddleware',
 ]
@@ -188,3 +190,8 @@ python -m smtpd -n -c DebuggingServer localhost:2525
 if DEBUG:
     EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = 'localhost', 2525, None, None
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
