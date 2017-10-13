@@ -6,9 +6,10 @@ from django.shortcuts import get_object_or_404, render
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, ListView, TemplateView, FormView
 
-from .forms import QuestionForm, EssayForm
+from .forms import QuestionForm, EssayForm, IntForm
 from .models import Quiz, Category, Progress, Sitting, Question
 from essay.models import Essay_Question
+from int_question.models import Int_Question
 
 
 class QuizMarkerMixin(object):
@@ -154,7 +155,7 @@ class QuizTake(FormView):
 
         return super(QuizTake, self).dispatch(request, *args, **kwargs)
 
-    def get_form(self, form_class=None): 
+    def get_form(self, form_class=None):
         if form_class is None:
             form_class = self.get_form_class()
         if self.logged_in_user:
@@ -166,6 +167,9 @@ class QuizTake(FormView):
 
         if self.question.__class__ is Essay_Question:
             form_class = EssayForm
+
+        elif self.question.__class__ is Int_Question:
+            form_class = IntForm
 
         return form_class(**self.get_form_kwargs())
 

@@ -80,7 +80,7 @@ INSTALLED_APPS = [
     'multichoice',
     'true_false',
     'essay',
-
+    'int_question',
 ] + get_machina_apps()
 
 MIDDLEWARE = [
