@@ -22,19 +22,19 @@ msgstr ""
 
 #: .\int_question\models.py:11
 msgid "Answer must be an integer number"
-msgstr ""
+msgstr "Ответом должно быть целое число"
 
 #: .\int_question\models.py:13
 msgid "Correct"
-msgstr ""
+msgstr "Правильный ответ"
 
 #: .\int_question\models.py:31
 msgid "Integer Question"
-msgstr ""
+msgstr "Целочисленный вопрос"
 
 #: .\int_question\models.py:32
 msgid "Integer Questions"
-msgstr ""
+msgstr "Целочисленный вопрос"
 
 #: .\templates\base1.html:25
 msgid "LOGOUT"
@@ -46,7 +46,7 @@ msgstr "Изменить пароль"
 
 #: .\templates\base1.html:50
 msgid "Theory"
-msgstr ""
+msgstr "Теория"
 
 #: .\templates\base1.html:56
 msgid "Blog"
@@ -70,7 +70,7 @@ msgstr "Добро пожаловать"
 
 #: .\templates\index.html:13
 msgid "News"
-msgstr ""
+msgstr "Новости"
 
 #: .\templates\login.html:4
 msgid "Your username and password didn't match. Please try again."
