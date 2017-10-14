@@ -17,11 +17,13 @@ def password_reset_done(request):
     return msg(request, 'Your password was changed successfully!')
 
 def index(request):
-    ks = Sitting.objects.all().filter(user = request.user)
     qzs = set()
-    for x in ks:
-        if x.check_if_passed:
-            qzs.add(x.quiz)
+    if not request.user.is_anonymous:
+        ks = Sitting.objects.all().filter(user = request.user)
+
+        for x in ks:
+            if x.check_if_passed:
+                qzs.add(x.quiz)
 
     #print(qzs)
 
