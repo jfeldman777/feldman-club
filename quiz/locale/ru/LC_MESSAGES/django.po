@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-quiz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-13 17:16+0300\n"
+"POT-Creation-Date: 2017-10-14 17:12+0300\n"
 "PO-Revision-Date: 2015-08-21 19:40+0500\n"
 "Last-Translator: Eugena Mihailikova <eugena.mihailikova@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: .\quiz\admin.py:31 .\quiz\admin.py:33 .\quiz\models.py:586
+#: .\quiz\admin.py:32 .\quiz\admin.py:34 .\quiz\models.py:588
 msgid "Questions"
 msgstr "Вопросы"
 
 #: .\quiz\models.py:32 .\quiz\models.py:39 .\quiz\models.py:55
-#: .\quiz\models.py:85 .\quiz\models.py:555 .\quiz\templates\progress.html:19
+#: .\quiz\models.py:85 .\quiz\models.py:557 .\quiz\templates\progress.html:19
 #: .\quiz\templates\quiz\quiz_detail.html:9
 #: .\quiz\templates\quiz\quiz_list.html:13
 #: .\quiz\templates\quiz\sitting_detail.html:10
@@ -35,7 +35,7 @@ msgstr "Категория"
 msgid "Categories"
 msgstr "Категории"
 
-#: .\quiz\models.py:50 .\quiz\models.py:60 .\quiz\models.py:560
+#: .\quiz\models.py:50 .\quiz\models.py:60 .\quiz\models.py:562
 msgid "Sub-Category"
 msgstr "Подкатегория"
 
@@ -147,7 +147,7 @@ msgstr ""
 "Если отмечено, то не отображается в публичном списке и может быть взято "
 "только пользователями с соответствующим правом"
 
-#: .\quiz\models.py:155 .\quiz\models.py:377 .\quiz\models.py:551
+#: .\quiz\models.py:155 .\quiz\models.py:377 .\quiz\models.py:553
 #: .\quiz\templates\quiz\sitting_list.html:14
 msgid "Quiz"
 msgstr "Тест"
@@ -220,24 +220,24 @@ msgstr "Окончание"
 msgid "Can see completed exams."
 msgstr "Может просматривать оконченные тесты"
 
-#: .\quiz\models.py:567
+#: .\quiz\models.py:569
 msgid "Figure"
 msgstr "Рисунок"
 
-#: .\quiz\models.py:571
+#: .\quiz\models.py:573
 msgid "Enter the question text that you want displayed"
 msgstr "Введите текст вопроса, который должен отобразиться"
 
-#: .\quiz\models.py:573 .\quiz\models.py:585 .\quiz\templates\question.html:47
+#: .\quiz\models.py:575 .\quiz\models.py:587 .\quiz\templates\question.html:47
 #: .\quiz\templates\quiz\sitting_detail.html:21
 msgid "Question"
 msgstr "Вопрос"
 
-#: .\quiz\models.py:577
+#: .\quiz\models.py:579
 msgid "Explanation to be shown after the question has been answered."
 msgstr "Объяснение показывается после того, как дан ответ на вопрос"
 
-#: .\quiz\models.py:580 .\quiz\templates\question.html:32
+#: .\quiz\models.py:582 .\quiz\templates\question.html:32
 #: .\quiz\templates\result.html:21 .\quiz\templates\result.html:87
 msgid "Explanation"
 msgstr "Объяснение"

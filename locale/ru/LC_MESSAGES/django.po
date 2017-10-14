@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-13 17:16+0300\n"
+"POT-Creation-Date: 2017-10-14 17:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,22 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: .\int_question\models.py:11
+msgid "Answer must be an integer number"
+msgstr ""
+
+#: .\int_question\models.py:13
+msgid "Correct"
+msgstr ""
+
+#: .\int_question\models.py:31
+msgid "Integer Question"
+msgstr ""
+
+#: .\int_question\models.py:32
+msgid "Integer Questions"
+msgstr ""
+
 #: .\templates\base1.html:25
 msgid "LOGOUT"
 msgstr "Выйти"
@@ -28,25 +44,33 @@ msgstr "Выйти"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: .\templates\base1.html:47
-msgid "Start new exam"
-msgstr "Начать новый тест"
+#: .\templates\base1.html:50
+msgid "Theory"
+msgstr ""
 
-#: .\templates\base1.html:52
-msgid "Look at previous ones"
-msgstr "Посмотреть историю"
-
-#: .\templates\base1.html:57
+#: .\templates\base1.html:56
 msgid "Blog"
 msgstr "Блог"
 
 #: .\templates\base1.html:62
+msgid "Start new exam"
+msgstr "Начать новый тест"
+
+#: .\templates\base1.html:67
+msgid "Look at previous ones"
+msgstr "Посмотреть историю"
+
+#: .\templates\base1.html:73
 msgid "Forum"
 msgstr "Форум"
 
-#: .\templates\index.html:5
+#: .\templates\index.html:12
 msgid "Welcome"
 msgstr "Добро пожаловать"
+
+#: .\templates\index.html:13
+msgid "News"
+msgstr ""
 
 #: .\templates\login.html:4
 msgid "Your username and password didn't match. Please try again."

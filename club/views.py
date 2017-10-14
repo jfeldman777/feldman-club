@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
 from django.contrib.auth.models import User
+from quiz.models import Sitting
 
 def msg(request,msg):
     return render(request, 'msg.html', {'msg': msg})
@@ -16,8 +17,18 @@ def password_reset_done(request):
     return msg(request, 'Your password was changed successfully!')
 
 def index(request):
+    ks = Sitting.objects.all().filter(user = request.user)
+    qzs = set()
+    for x in ks:
+        if x.check_if_passed:
+            qzs.add(x.quiz)
+
+    #print(qzs)
+
     form = AuthenticationForm(request)
-    return render(request,'index.html',{'form':form})
+    return render(request,'index.html',
+        {'form':form,'qzs':qzs
+        })
 
 def signup(request):
     if request.method == 'POST':

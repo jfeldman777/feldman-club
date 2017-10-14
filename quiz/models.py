@@ -539,6 +539,8 @@ class Sitting(models.Model):
         total = self.get_max_score
         return answered, total
 
+    #def __str__(self):
+    #    return (str)(self.check_if_passed)
 
 @python_2_unicode_compatible
 class Question(models.Model):
