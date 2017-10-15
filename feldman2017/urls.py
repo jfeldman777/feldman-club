@@ -18,7 +18,15 @@ from django.contrib import admin
 from machina.app import board
 from club import views as core_views
 
-urlpatterns = [
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = []
+
+if settings.DEBUG:#в этом режиме медиафайлы берутся из статической папки MEDIA
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
     url('^admin/', admin.site.urls),
     url('^signup/$', core_views.signup, name='signup'),
     url('^password_change/done/$', core_views.password_change_done,

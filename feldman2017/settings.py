@@ -59,6 +59,8 @@ HAYSTACK_CONNECTIONS = {
 #LOGIN_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = '/'
 
+SMARTFIELDS_KEEP_ORPHANS = False
+
 INSTALLED_APPS = [
     'club.apps.ClubConfig',
     'django.contrib.admin',
@@ -92,6 +94,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
      # Machina
     'machina.apps.forum_permission.middleware.ForumPermissionMiddleware',
 ]
@@ -158,18 +161,24 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+UP = True
+try:
+    EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+    EMAIL_HOST= 'smtp.sendgrid.net'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
+except:
+    UP = False
+    pass
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
 LANGUAGE_CODE = 'ru'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -207,3 +216,36 @@ MACHINA_DEFAULT_AUTHENTICATED_USER_FORUM_PERMISSIONS = [
     'can_vote_in_polls',
     'can_download_file',
 ]
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+STATIC_HOST = 'https://d2mjsx616o8pj3.cloudfront.net' if UP else ''
+STATIC_URL = STATIC_HOST+'/static/'
+
+STATICFILES_DIRS = [
+            os.path.join(BASE_DIR, "static"),
+        ]
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, "staticfiles"))
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+try:
+    AWS_S3_HOST = "s3-us-west-1.amazonaws.com"
+    AWS_STORAGE_BUCKET_NAME = os.environ.get('S3_BUCKET_NAME', '')
+    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+    AWS_REGION = os.environ.get('AWS_REGION', '')
+    AWS_S3_CALLING_FORMAT = "boto.s3.connection.OrdinaryCallingFormat"
+    AWS_PRELOAD_METADATA = True
+    MEDIA_URL = 'https://s3-%s.amazonaws.com/%s/media/' % (AWS_REGION, AWS_STORAGE_BUCKET_NAME)
+    #DEFAULT_FILE_STORAGE = 'myapp.customstorages.MediaStorage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+except:
+    pass
+ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
