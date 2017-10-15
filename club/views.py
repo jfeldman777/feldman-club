@@ -16,6 +16,21 @@ def password_change_done(request):
 def password_reset_done(request):
     return msg(request, 'Your password was changed successfully!')
 
+def other(request):
+    qzs = set()
+    if not request.user.is_anonymous:
+        ks = Sitting.objects.all().exclude(user = request.user).order_by('quiz')
+
+        for x in ks:
+            if x.check_if_passed:
+                y = (x.quiz,x.user)
+                qzs.add(y)
+
+
+    return render(request,'other.html',
+        {'qzs':qzs,
+        })
+
 def index(request):
     qzs = set()
     if not request.user.is_anonymous:

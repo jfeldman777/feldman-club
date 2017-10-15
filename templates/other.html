@@ -2,18 +2,18 @@
 {% load i18n %}
 
 {% block content %}
+<h2>
+{% trans 'Other Laureates' %}
+</h2>
 <p>
-  {% for x in qzs %}
+  {% for x,y in qzs %}
   <a class="btn btn-primary btn-lg">
     <span class="glyphicon glyphicon-king"></span>
     {{x}}
   </a>
+  {{y}}
+  <br>
   {% endfor %}
-<h2>{% trans 'Welcome' %}!</h2>
-{% trans 'What all this stuff is about' %}?
-<a href="weblog/" target="weblog">
-{% trans 'The answer is here' %}
-</a>
-  <h3>{% trans 'News' %}</h3>
+
 </p>
 {% endblock %}
