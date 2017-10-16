@@ -17,10 +17,6 @@ from machina import MACHINA_MAIN_STATIC_DIR
 
 # Tell Django where the project's translation files should be.
 SITE_ID = 1
-STATICFILES_DIRS = (
-    # ...
-    MACHINA_MAIN_STATIC_DIR,
-)
 
 CACHES = {
     'default': {
@@ -83,8 +79,6 @@ INSTALLED_APPS = [
     'true_false',
     'essay',
     'int_question',
-
-    'storages',
 ] + get_machina_apps()
 
 MIDDLEWARE = [
@@ -225,12 +219,15 @@ DATABASES['default'].update(db_from_env)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-STATIC_HOST = 'https://d2mjsx616o8pj3.cloudfront.net' if UP else ''
-STATIC_URL = STATIC_HOST+'/static/'
+#STATIC_HOST = 'https://d2mjsx616o8pj3.cloudfront.net' if UP else ''
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
             os.path.join(BASE_DIR, "static"),
+            MACHINA_MAIN_STATIC_DIR,
         ]
+
+
 STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, "staticfiles"))
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
