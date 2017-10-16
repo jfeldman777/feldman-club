@@ -83,6 +83,8 @@ INSTALLED_APPS = [
     'true_false',
     'essay',
     'int_question',
+
+    'storages',
 ] + get_machina_apps()
 
 MIDDLEWARE = [
@@ -107,7 +109,7 @@ TEMPLATES = [
         'DIRS': ['templates',
                 MACHINA_MAIN_TEMPLATE_DIR,
                 ],
-        #'APP_DIRS': True,
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -121,10 +123,10 @@ TEMPLATES = [
                 'machina.core.context_processors.metadata',
             ],
 
-            'loaders': [######################
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
-            ]################
+            #'loaders': [######################
+            #    'django.template.loaders.filesystem.Loader',
+            #    'django.template.loaders.app_directories.Loader',
+            #]################
         },
     },
 ]
