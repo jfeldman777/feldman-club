@@ -84,6 +84,10 @@ class Quiz(models.Model):
         Category, null=True, blank=True,
         verbose_name=_("Category"))
 
+    subcategory = models.ForeignKey(
+        SubCategory, null=True, blank=True,
+        verbose_name=_("SubCategory"))
+
     random_order = models.BooleanField(
         blank=False, default=False,
         verbose_name=_("Random Order"),

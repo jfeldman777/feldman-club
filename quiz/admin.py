@@ -51,9 +51,9 @@ class QuizAdminForm(forms.ModelForm):
 class QuizAdmin(admin.ModelAdmin):
     form = QuizAdminForm
 
-    list_display = ('title', 'category', )
-    list_filter = ('category',)
-    search_fields = ('description', 'category', )
+    list_display = ('title', 'category', 'subcategory',)
+    list_filter = ('category','subcategory',)
+    search_fields = ('description', 'category', 'subcategory',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
