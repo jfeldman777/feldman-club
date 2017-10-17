@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-quiz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-17 16:16+0300\n"
+"POT-Creation-Date: 2017-10-17 17:40+0300\n"
 "PO-Revision-Date: 2015-08-21 19:40+0500\n"
 "Last-Translator: Eugena Mihailikova <eugena.mihailikova@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -281,8 +281,8 @@ msgid "Correctly answererd"
 msgstr "Верных ответов"
 
 #: .\quiz\templates\progress.html:21
-msgid "Incorrect"
-msgstr "Неверных ответов"
+msgid "Total"
+msgstr "Всех вопросов"
 
 #: .\quiz\templates\progress.html:50
 msgid "Previous exam papers"
@@ -480,3 +480,6 @@ msgstr "категория"
 #: .\quiz\templates\view_quiz_category.html:20
 msgid "There are no quizzes"
 msgstr "Тестов нет"
+
+#~ msgid "Incorrect"
+#~ msgstr "Неверных ответов"
