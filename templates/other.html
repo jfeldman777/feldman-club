@@ -3,17 +3,31 @@
 
 {% block content %}
 <h2>
-{% trans 'Other Laureates' %}
+{% trans 'Quizes passed' %}
 </h2>
-<p>
-  {% for x,y in qzs %}
-  <a class="btn btn-primary btn-lg">
-    <span class="glyphicon glyphicon-king"></span>
-    {{x}}
-  </a>
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>{% trans 'User' %}
+        </th>
+      <th>{% trans 'Quizes passed' %}</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for x,y,z in qzs %}
+
+    <tr>
+  <th scope="row">{{z}}</th>
+  <td>
+       {{x.get_full_name}}
+  </td><td>
   {{y}}
-  <br>
+</td>
+</tr>
   {% endfor %}
+</tbody>
+</table>
 
 </p>
 {% endblock %}

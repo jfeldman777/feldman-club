@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-15 17:10+0300\n"
+"POT-Creation-Date: 2017-10-17 14:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,6 +68,10 @@ msgstr "Другие Лауреаты"
 msgid "Forum"
 msgstr "Форум"
 
+#: .\templates\base1.html:82
+msgid "Home"
+msgstr "Домой"
+
 #: .\templates\index.html:12
 msgid "Welcome"
 msgstr "Добро пожаловать"
@@ -108,6 +112,13 @@ msgstr "Восстановить пароль"
 msgid "OK, get me HOME"
 msgstr "Ладно, поехали домой"
 
-#: .\templates\other.html:6
-msgid "Other Laureates"
-msgstr "Другие Лауреаты"
+#: .\templates\other.html:6 .\templates\other.html:14
+msgid "Quizes passed"
+msgstr "Успешные тесты"
+
+#: .\templates\other.html:12
+msgid "User"
+msgstr "Пользователь"
+
+#~ msgid "Other Laureates"
+#~ msgstr "Другие Лауреаты"

@@ -7,6 +7,9 @@ from .forms import SignUpForm
 from django.contrib.auth.models import User
 from quiz.models import Sitting
 
+from collections import Counter
+from operator import itemgetter
+
 def msg(request,msg):
     return render(request, 'msg.html', {'msg': msg})
 
@@ -17,18 +20,27 @@ def password_reset_done(request):
     return msg(request, 'Your password was changed successfully!')
 
 def other(request):
-    qzs = set()
+    qs = set()
     if not request.user.is_anonymous:
-        ks = Sitting.objects.all().exclude(user = request.user).order_by('quiz')
+        ks = Sitting.objects.all()
 
         for x in ks:
             if x.check_if_passed:
-                y = (x.quiz,x.user)
-                qzs.add(y)
+                y = (x.user,x.quiz)
+                qs.add(y)
+
+    q1 = [x for x,y in qs]
+    d = Counter(q1)
+    q2 = sorted(d.items(), key=itemgetter(1), reverse = True)
+
+    q3 = []
+    for i in range(len(q2)):
+        t = [q2[i][0],q2[i][1],i+1]
+        q3.append(t)
 
 
     return render(request,'other.html',
-        {'qzs':qzs,
+        {'qzs':q3,
         })
 
 def index(request):
