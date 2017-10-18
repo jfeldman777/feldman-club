@@ -75,6 +75,11 @@ class Quiz(models.Model):
         verbose_name=_("Description"),
         blank=True, help_text=_("a description of the quiz"))
 
+    figure = models.ImageField(upload_to='uploads/%Y/%m/%d',
+                               blank=True,
+                               null=True,
+                               verbose_name=_("Figure"))        
+
     url = models.SlugField(
         max_length=60, blank=False,
         help_text=_("a user friendly url"),
