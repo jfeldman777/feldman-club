@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-17 17:40+0300\n"
+"POT-Creation-Date: 2017-10-18 20:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,47 +44,51 @@ msgstr "Выйти"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: .\templates\base1.html:50
+#: .\templates\base1.html:51
 msgid "Theory"
 msgstr "Теория"
 
-#: .\templates\base1.html:56
+#: .\templates\base1.html:57
 msgid "Blog"
 msgstr "Блог"
 
-#: .\templates\base1.html:62
+#: .\templates\base1.html:63
 msgid "Start new exam"
 msgstr "Начать новый тест"
 
-#: .\templates\base1.html:67
+#: .\templates\base1.html:68
 msgid "Look at previous ones"
 msgstr "Посмотреть историю"
 
-#: .\templates\base1.html:72
+#: .\templates\base1.html:73
 msgid "Other laureates"
 msgstr "Другие Лауреаты"
 
-#: .\templates\base1.html:77
+#: .\templates\base1.html:78
 msgid "Forum"
 msgstr "Форум"
 
-#: .\templates\base1.html:82
+#: .\templates\base1.html:83
 msgid "Home"
 msgstr "Домой"
 
-#: .\templates\index.html:12
+#: .\templates\index.html:6
 msgid "Welcome"
 msgstr "Добро пожаловать"
 
-#: .\templates\index.html:13
-msgid "What all this stuff is about"
-msgstr "О чем это вообще"
+#: .\templates\index.html:10
+msgid "This is Feldman-Club site"
+msgstr "Это Фельдман-Клуб"
+
+#: .\templates\index.html:12
+msgid "You can read about Feldman-Club in the Blog here"
+msgstr "Вы можете прочитать о Клубе подробнее в нашем Блоге"
 
 #: .\templates\index.html:15
-msgid "The answer is here"
-msgstr "Ответ здесь"
+msgid "Your Diplomas"
+msgstr "Ваши Сертификаты"
 
-#: .\templates\index.html:17
+#: .\templates\index.html:23
 msgid "News"
 msgstr "Новости"
 
@@ -112,13 +116,20 @@ msgstr "Восстановить пароль"
 msgid "OK, get me HOME"
 msgstr "Ладно, поехали домой"
 
-#: .\templates\other.html:6 .\templates\other.html:14
-msgid "Quizes passed"
-msgstr "Успешные тесты"
+#: .\templates\other.html:6
+msgid "Our Laureates"
+msgstr "Наши Лауреаты"
 
 #: .\templates\other.html:12
 msgid "User"
 msgstr "Пользователь"
 
-#~ msgid "Other Laureates"
-#~ msgstr "Другие Лауреаты"
+#: .\templates\other.html:14
+msgid "Quizes passed"
+msgstr "Успешные тесты"
+
+#~ msgid "What all this stuff is about"
+#~ msgstr "О чем это вообще"
+
+#~ msgid "The answer is here"
+#~ msgstr "Ответ здесь"
