@@ -127,9 +127,3 @@ msgstr "Пользователь"
 #: .\templates\other.html:14
 msgid "Quizes passed"
 msgstr "Успешные тесты"
-
-#~ msgid "What all this stuff is about"
-#~ msgstr "О чем это вообще"
-
-#~ msgid "The answer is here"
-#~ msgstr "Ответ здесь"
