@@ -1,0 +1,12 @@
+{% extends "base1.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<h2>{% trans 'News' %}</h2>
+  {% for news in qs %}
+  <h3>{{news.title}}</h3>
+  {{news.description}}<br>
+  <small>{{news.updated_at}}</small>
+  {% endfor %}
+{% endblock %}

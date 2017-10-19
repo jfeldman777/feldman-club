@@ -11,6 +11,12 @@ from .models import NewsRecord
 from collections import Counter
 from operator import itemgetter
 
+def news(request):
+    qs = NewsRecord.objects.all();
+    return render(request,'news.html',
+            {'qs':qs,
+            })
+            
 def msg(request,msg):
     return render(request, 'msg.html', {'msg': msg})
 
