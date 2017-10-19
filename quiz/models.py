@@ -78,7 +78,7 @@ class Quiz(models.Model):
     figure = models.ImageField(upload_to='uploads/%Y/%m/%d',
                                blank=True,
                                null=True,
-                               verbose_name=_("Figure"))        
+                               verbose_name=_("Figure"))
 
     url = models.SlugField(
         max_length=60, blank=False,
@@ -163,6 +163,7 @@ class Quiz(models.Model):
     class Meta:
         verbose_name = _("Quiz")
         verbose_name_plural = _("Quizzes")
+        ordering = ['category','subcategory']
 
     def __str__(self):
         return self.title
