@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from .forms import SignUpForm
 from django.contrib.auth.models import User
 from quiz.models import Sitting
+from .models import NewsRecord
 
 from collections import Counter
 from operator import itemgetter
@@ -44,6 +45,8 @@ def other(request):
         })
 
 def index(request):
+    news = NewsRecord.objects.all()[:1].get()
+
     qzs = set()
     if not request.user.is_anonymous:
         ks = Sitting.objects.all().filter(user = request.user)
@@ -56,7 +59,7 @@ def index(request):
 
     form = AuthenticationForm(request)
     return render(request,'index.html',
-        {'form':form,'qzs':qzs
+        {'form':form,'qzs':qzs, 'news':news
         })
 
 def signup(request):
