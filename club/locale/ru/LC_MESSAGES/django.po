@@ -21,12 +21,28 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 #: .\club\models.py:8
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: .\club\models.py:12
 msgid "Content"
-msgstr ""
+msgstr "Сообщение"
 
 #: .\club\models.py:18
 msgid "Figure"
-msgstr ""
+msgstr "Картинка"
+
+
+msgid "Email"
+msgstr "Электронная почта"
+
+msgid "Required. Inform a valid email address."
+msgstr "Обязательное поле. Введите свой истинный электронный адрес."
+
+msgid "Last Name"
+msgstr "Фамилия"
+
+msgid "First Name"
+msgstr "Имя"
+
+msgid "Optional."
+msgstr "Необязательно, желательно."
