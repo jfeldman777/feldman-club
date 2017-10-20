@@ -1,0 +1,27 @@
+{% extends "base1.html" %}
+{% load i18n %}
+
+{% block content %}
+
+
+<a href="#" class="btn  " title="0%"><span class="glyphicon glyphicon-pawn"></span> 0</a>
+<a href="#" class="btn btn-primary btn-danger" title="1-29%"><span class="glyphicon glyphicon-knight"></span> 1-29</a>
+<a href="#" class="btn btn-primary btn-warning" title="30-59%"><span class="glyphicon glyphicon-bishop"></span> 30-59</a>
+<a href="#" class="btn btn-primary btn-success" title="60-84%"><span class="glyphicon glyphicon-tower"></span> 60-84</a>
+<a href="#" class="btn btn-primary btn-info" title="85-99%"><span class="glyphicon glyphicon-queen"></span> 85-99</a>
+<a href="#" class="btn btn-primary btn-primary" title="100%"><span class="glyphicon glyphicon-king"></span> 100</a>
+<h2>
+{% trans 'Map of your achivements' %}</h2>
+{% trans 'Color, chess piece, and number show your progress on specific quiz.' %}
+<br>
+{% trans 'Pop-up text names the quiz.' %}<br>
+{% trans 'Click the button to see details about the quiz.' %}
+<hr>
+{% for x in qs %}
+<a href="/quiz/{{x.slug}}/" class="btn {{x.color}}"
+title="{{x.name}}">
+<span class="glyphicon glyphicon-{{x.piece}}">
+</span>{{x.score}} </a>
+
+{% endfor %}
+{% endblock %}

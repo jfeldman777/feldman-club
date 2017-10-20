@@ -5,14 +5,64 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
 from django.contrib.auth.models import User
-from quiz.models import Sitting
+from quiz.models import Sitting, Quiz
 from .models import NewsRecord
 
 from collections import Counter
 from operator import itemgetter
-
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+def score(quiz,user):
+    qs = Sitting.objects.filter(quiz = quiz, user = user)
+    m = 0
+    for x in qs:
+        if x.get_percent_correct > m:
+            m = x.get_percent_correct
+    return m
+
+
+class MyQuizScore:
+    def __init__(self,quiz,user):
+        self.user = user
+        self.score = score(quiz,user)
+        self.name = quiz.title
+        self.slug = quiz.url
+        sc = self.score
+        if  sc == 0:
+            color = " "
+            p = "pawn"
+        elif 0 < sc < 30:
+            color = "btn-primary btn-danger"
+            p = "knight"
+        elif 30 <= sc < 60:
+            color = "btn-primary btn-warning"
+            p = "bishop"
+        elif 60 <= sc < 85:
+            color = "btn-primary btn-success"
+            p = "tower"
+        elif 85 <= sc < 100:
+            color = "btn-primary btn-info"
+            p = "queen"
+        else:
+            color = "btn-primary btn-primary"
+            p = "king"
+
+        self.color = color
+        self.piece = p
+
+def map(request):
+    qs1 = Quiz.objects.all()
+    qs = [MyQuizScore(x,request.user) for x in qs1]
+
+    return render(request,'map.html',
+                {'qs':qs,
+                })
+"""
+<a href="/quiz/{{x.slug}}/" class="btn btn-primary btn-{{x.color}}"
+title="{{x.name}}">
+<span class="glyphicon glyphicon-{{x.piece}}">
+</span>{{x.score}} </a>
+"""
 def news(request):
     x_list = NewsRecord.objects.all()
     page = request.GET.get('page', 1)

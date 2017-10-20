@@ -20,6 +20,28 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
+msgid "Map of your progress"
+msgstr "Карта ваших достижений"
+
+msgid "History of your progress"
+msgstr "История ваших достижений"
+
+
+msgid "Map of your achivements"
+msgstr "Карта ваших достижений"
+
+msgid "Map"
+msgstr "Карта"
+
+msgid "Color, chess piece, and number show your progress on specific quiz."
+msgstr "Цвет, шахматная фигура и число показывают ваше продвижение на данном тесте в процентах."
+
+msgid "Pop-up text names the quiz."
+msgstr "Всплывающая подсказка показывает название теста."
+
+msgid "Click the button to see details about the quiz."
+msgstr "Нажмите кнопку, чтобы получить детальную информацию о данном тесте."
+
 msgid "(current)"
 msgstr "(текущая страница)"
 

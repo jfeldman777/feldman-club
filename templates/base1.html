@@ -37,14 +37,15 @@
     {% block content %}
     {% endblock content %}
     </div></div>
-
-      {% if user.is_anonymous %}
-
-      {% else %}
     <div class="container">
       <ul class="nav nav-pills nav-fill">
 
-        <li class="nav-item">
+      </li>        <li class="nav-item">
+        <a class="nav-link" href="/" >
+          {% trans 'Home' %}
+        </a>
+      </li>
+          <li class="nav-item">
           <a class="nav-link"
           href="http://hbtjournal.com/index_ru.html"
           target="theory">
@@ -59,21 +60,6 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" href="/quiz/" target="quiz">
-            {% trans 'Start new exam' %}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/quiz/progress/" target="progress">
-            {% trans 'Look at previous ones' %}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/other/">
-            {% trans 'Other laureates' %}
-          </a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/forum/" target="forum">
             {% trans 'Forum' %}
           </a>
@@ -82,15 +68,30 @@
           <a class="nav-link" href="/news/" >
             {% trans 'News' %}
           </a>
-        </li>        <li class="nav-item">
-          <a class="nav-link" href="/" >
-            {% trans 'Home' %}
+
+  {% if not user.is_anonymous %}
+        <li class="nav-item">
+          <a class="nav-link" href="/map/">
+            {% trans 'Map of your progress' %}
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/quiz/progress/">
+            {% trans 'History of your progress' %}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/other/">
+            {% trans 'Other laureates' %}
+          </a>
+        </li>
+
+{% endif %}
       </ul>
 
 </div>
 </div>
-{% endif %}
+
         </body>
     </html>
