@@ -9,4 +9,35 @@
   {{news.description}}<br>
   <small>{{news.updated_at}}</small>
   {% endfor %}
+
+  {% if qs.has_other_pages %}
+    <ul class="pagination">
+      {% if qs.has_previous %}
+        <li><a href="?page={{ qs.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in qs.paginator.page_range %}
+        {% if qs.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">
+            (current)
+            {% trans '(current)' %}
+          </span></span></li>
+        {% else %}
+          <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if qs.has_next %}
+        <li><a href="?page={{ qs.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+
+  {% endif %}
+
+
+
+
+
 {% endblock %}
