@@ -7,8 +7,9 @@
 
 
 {% if user.is_anonymous %}
-    {% trans 'This is Feldman-Club site' %}.<br>
-
+    {% trans 'This is Feldman-Club site' %}.<p>
+{% trans 'Do you know what TUAI is?'%}
+{% trans 'Show your knowledge and get certified!' %}</p>
     {% trans 'To get all information please Log-In or Sign-Up.' %}
 {% else %}
 <hr>

@@ -20,6 +20,15 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
+msgid "Start from here!"
+msgstr "Начните отсюда!"
+
+msgid "Do you know what TUAI is?"
+msgstr "Знаете ли вы что такое Уровни Фельдмана?"
+
+msgid "Show your knowledge and get certified!"
+msgstr "Покажите свои знания и получите сертификат!"
+
 msgid "To get all information please Log-In or Sign-Up."
 msgstr "Чтобы получить всю информацию, пожалуйста, зарегистрируйтесь или войдите."
 
