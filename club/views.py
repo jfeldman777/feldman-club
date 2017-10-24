@@ -94,6 +94,31 @@ def password_reset_done(request):
 def other(request):
     qs = set()
     if not request.user.is_anonymous:
+        ks = ExamEvent.objects.all()
+
+        for x in ks:
+            if x.result >= 99:
+                y = (x.user,x.quiz)
+                qs.add(y)
+
+    q1 = [x for x,y in qs]
+    d = Counter(q1)
+    q2 = sorted(d.items(), key=itemgetter(1), reverse = True)
+
+    q3 = []
+    for i in range(len(q2)):
+        t = [q2[i][0],q2[i][1],i+1]
+        q3.append(t)
+
+
+    return render(request,'other.html',
+        {'qzs':q3,
+        })
+
+
+def other_old(request):
+    qs = set()
+    if not request.user.is_anonymous:
         ks = Sitting.objects.all()
 
         for x in ks:
