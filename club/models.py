@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext as _
+from django.contrib.auth.models import User
+from quiz.models import Quiz
 
 # Create your models here.
 class NewsRecord(models.Model):
@@ -20,3 +22,9 @@ class NewsRecord(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     class Meta:
         ordering = ['-updated_at','-created_at',]
+
+class ExamEvent(models.Model):
+    at_date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    result = models.IntegerField()

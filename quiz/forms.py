@@ -1,5 +1,6 @@
 from django import forms
 from django.forms.widgets import RadioSelect, Textarea
+from django.utils.translation import ugettext as _
 
 
 class QuestionForm(forms.Form):
@@ -20,3 +21,6 @@ class IntForm(forms.Form):
     def __init__(self, question, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["answers"] = forms.IntegerField()
+
+class MyIntForm(forms.Form):
+    answer = forms.IntegerField(label=_('Your answer'),required = False)

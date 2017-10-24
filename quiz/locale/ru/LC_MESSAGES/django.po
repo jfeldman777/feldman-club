@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-quiz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-19 22:42+0300\n"
+"POT-Creation-Date: 2017-10-24 19:35+0300\n"
 "PO-Revision-Date: 2015-08-21 19:40+0500\n"
 "Last-Translator: Eugena Mihailikova <eugena.mihailikova@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,10 @@ msgstr ""
 #: .\quiz\admin.py:32 .\quiz\admin.py:34 .\quiz\models.py:598
 msgid "Questions"
 msgstr "Вопросы"
+
+#: .\quiz\forms.py:26 .\quiz\templates\result.html:84
+msgid "Your answer"
+msgstr "Ваш ответ"
 
 #: .\quiz\models.py:32 .\quiz\models.py:39 .\quiz\models.py:55
 #: .\quiz\models.py:90 .\quiz\models.py:567 .\quiz\templates\progress.html:19
@@ -253,15 +257,15 @@ msgstr "Объяснение"
 msgid "Example Quiz Website"
 msgstr "Тесты"
 
-#: .\quiz\templates\correct_answer.html:6
+#: .\quiz\templates\correct_answer.html:8
 msgid "You answered the above question incorrectly"
 msgstr "Вы дали неверный ответ"
 
-#: .\quiz\templates\correct_answer.html:16
+#: .\quiz\templates\correct_answer.html:17
 msgid "This is the correct answer"
 msgstr "Это правильный ответ"
 
-#: .\quiz\templates\correct_answer.html:23
+#: .\quiz\templates\correct_answer.html:24
 msgid "This was your answer."
 msgstr "Это был ваш ответ"
 
@@ -453,10 +457,6 @@ msgstr "Балл вашей сессии"
 #: .\quiz\templates\result.html:66
 msgid "out of a possible"
 msgstr "из возможных"
-
-#: .\quiz\templates\result.html:84
-msgid "Your answer"
-msgstr "Ваш ответ"
 
 #: .\quiz\templates\single_complete.html:13
 msgid "You have already sat this exam and only one sitting is permitted"

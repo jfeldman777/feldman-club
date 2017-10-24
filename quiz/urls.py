@@ -1,5 +1,6 @@
 from django.conf.urls import url
 
+from .views2 import pre_quiz, exam, pre_final, final, exam_next, exam_prev
 from .views import QuizListView, CategoriesListView,\
     ViewQuizListByCategory, QuizUserProgressView, QuizMarkingList,\
     QuizMarkingDetail, QuizDetailView, QuizTake
@@ -29,12 +30,31 @@ urlpatterns =         [url(regex=r'^$',
                            view=QuizMarkingDetail.as_view(),
                            name='quiz_marking_detail'),
 
-                       #  passes variable 'quiz_name' to quiz_take view
-                       url(regex=r'^(?P<slug>[\w-]+)/$',
-                           view=QuizDetailView.as_view(),
-                           name='quiz_start_page'),
+                       url(regex=r'^final/$',
+                           view=final,
+                           name='final'),
 
-                       url(regex=r'^(?P<quiz_name>[\w-]+)/take/$',
-                           view=QuizTake.as_view(),
-                           name='quiz_question'),
+                       url(regex=r'^pre_final/$',
+                           view=pre_final,
+                           name='pre_final'),
+
+
+                       url(regex=r'^exam/next/$',
+                           view=exam_next,
+                           name='exam_next'),
+
+                      url(regex=r'^exam/prev/$',
+                          view=exam_prev,
+                          name='exam_prev'),
+
+
+                       url(regex=r'^exam/$',
+                           view=exam,
+                           name='exam'),
+
+                       url(regex=r'^(?P<slug>[\w-]+)/$',
+                           view=pre_quiz,
+                           name='pre_quiz'),
+
+
                            ]

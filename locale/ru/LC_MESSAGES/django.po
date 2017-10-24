@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-19 22:42+0300\n"
+"POT-Creation-Date: 2017-10-24 19:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,56 +20,19 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-msgid "Start from here!"
-msgstr "Начните отсюда!"
-
-msgid "Do you know what TUAI is?"
-msgstr "Знаете ли вы что такое Уровни Фельдмана?"
-
-msgid "Show your knowledge and get certified!"
-msgstr "Покажите свои знания и получите сертификат!"
-
-msgid "To get all information please Log-In or Sign-Up."
-msgstr "Чтобы получить всю информацию, пожалуйста, зарегистрируйтесь или войдите."
-
-msgid "Map of your progress"
-msgstr "Карта ваших достижений"
-
-msgid "History of your progress"
-msgstr "История ваших достижений"
-
-
-msgid "Map of your achivements"
-msgstr "Карта ваших достижений"
-
-msgid "Map"
-msgstr "Карта"
-
-msgid "Color, chess piece, and number show your progress on specific quiz."
-msgstr "Цвет, шахматная фигура и число показывают ваше продвижение на данном тесте в процентах."
-
-msgid "Pop-up text names the quiz."
-msgstr "Всплывающая подсказка показывает название теста."
-
-msgid "Click the button to see details about the quiz."
-msgstr "Нажмите кнопку, чтобы получить детальную информацию о данном тесте."
-
-msgid "(current)"
-msgstr "(текущая страница)"
-
-#: .\int_question\models.py:11
+#: .\int_question\models.py:14
 msgid "Answer must be an integer number"
 msgstr "Ответом должно быть целое число"
 
-#: .\int_question\models.py:13
+#: .\int_question\models.py:16
 msgid "Correct"
 msgstr "Правильный ответ"
 
-#: .\int_question\models.py:31
+#: .\int_question\models.py:34
 msgid "Integer Question"
 msgstr "Целочисленный вопрос"
 
-#: .\int_question\models.py:32
+#: .\int_question\models.py:35
 msgid "Integer Questions"
 msgstr "Целочисленный вопрос"
 
@@ -81,54 +44,95 @@ msgstr "Выйти"
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: .\templates\base1.html:51
+#: .\templates\base1.html:45 .\templates\final.html:27
+msgid "Home"
+msgstr "Домой"
+
+#: .\templates\base1.html:52
 msgid "Theory"
 msgstr "Теория"
 
-#: .\templates\base1.html:57 .\templates\zinnia\base.html:23
-msgid "Blog"
-msgstr "Блог"
+#: .\templates\base1.html:60 .\templates\final.html:24
+msgid "Help"
+msgstr "Решебник"
 
-#: .\templates\base1.html:63
-msgid "Start new exam"
-msgstr "Начать новый тест"
+#: .\templates\base1.html:66 .\templates\index.html:16 .\templates\news.html:6
+msgid "News"
+msgstr "Новости"
 
-#: .\templates\base1.html:68
-msgid "Look at previous ones"
-msgstr "Посмотреть историю"
-
-#: .\templates\base1.html:73
-msgid "Other laureates"
-msgstr "Другие Лауреаты"
-
-#: .\templates\base1.html:78
+#: .\templates\base1.html:72
 #: .\templates\machina\forum_moderation\moderation_queue\list.html:35
 msgid "Forum"
 msgstr "Форум"
 
-#: .\templates\base1.html:83 .\templates\index.html:23 .\templates\news.html:6
-msgid "News"
-msgstr "Новости"
+#: .\templates\base1.html:77
+msgid "Start from here!"
+msgstr "Начните отсюда!"
 
-#: .\templates\base1.html:87
-msgid "Home"
-msgstr "Домой"
+#: .\templates\base1.html:78 .\templates\final.html:21
+msgid "Map of your progress"
+msgstr "Карта ваших достижений"
 
-#: .\templates\index.html:6
+#: .\templates\base1.html:84
+msgid "History of your progress"
+msgstr "История ваших достижений"
+
+#: .\templates\base1.html:89
+msgid "Other laureates"
+msgstr "Другие Лауреаты"
+
+#: .\templates\exam.html:6 .\templates\index.html:6
+#: .\templates\pre_final.html:7 .\templates\pre_quiz.html:6
 msgid "Welcome"
 msgstr "Добро пожаловать"
+
+#: .\templates\exam.html:19
+msgid "previous"
+msgstr "назад"
+
+#: .\templates\exam.html:23
+msgid "pre-final"
+msgstr "пред-финальный лист"
+
+#: .\templates\exam.html:27
+msgid "next"
+msgstr "вперед"
+
+#: .\templates\final.html:5
+msgid "wrong"
+msgstr "неверно"
+
+#: .\templates\final.html:6
+#, fuzzy
+#| msgid "Correct"
+msgid "correct"
+msgstr "Правильный ответ"
+
+#: .\templates\final.html:7 .\templates\pre_final.html:6
+#: .\templates\pre_final.html:10
+msgid "missed"
+msgstr "пропущено"
+
+#: .\templates\final.html:8
+msgid "Final"
+msgstr "Финальный лист"
 
 #: .\templates\index.html:10
 msgid "This is Feldman-Club site"
 msgstr "Это Фельдман-Клуб"
 
-#: .\templates\index.html:12
-msgid "You can read about Feldman-Club in the Blog here"
-msgstr "Вы можете прочитать о Клубе подробнее в нашем Блоге"
+#: .\templates\index.html:11
+msgid "Do you know what TUAI is?"
+msgstr "Знаете ли вы что такое Уровни Фельдмана?"
 
-#: .\templates\index.html:15
-msgid "Your Diplomas"
-msgstr "Ваши Сертификаты"
+#: .\templates\index.html:12
+msgid "Show your knowledge and get certified!"
+msgstr "Покажите свои знания и получите сертификат!"
+
+#: .\templates\index.html:13
+msgid "To get all information please Log-In or Sign-Up."
+msgstr ""
+"Чтобы получить всю информацию, пожалуйста, зарегистрируйтесь или войдите."
 
 #: .\templates\login.html:4
 msgid "Your username and password didn't match. Please try again."
@@ -341,7 +345,8 @@ msgstr "Добавить вариант"
 msgid ""
 "<b>Note:</b>&nbsp;Deleting poll options of an existing poll will delete the "
 "associated votes."
-msgstr "<b>Внимание:</b>&nbsp; удаляя вариант вы удаляете все голоса за этот вариант."
+msgstr ""
+"<b>Внимание:</b>&nbsp; удаляя вариант вы удаляете все голоса за этот вариант."
 
 #: .\templates\machina\forum_conversation\forum_polls\poll_preview.html:9
 #: .\templates\machina\forum_conversation\post_preview.html:10
@@ -450,7 +455,8 @@ msgstr "Обзор темы"
 #: .\templates\machina\forum_search\search.html:85
 #, python-format
 msgid "By: <a href=\"%(poster_url)s\">%(username)s</a> on %(creation_date)s"
-msgstr "Автор: <a href=\"%(poster_url)s\">%(username)s</a> от %(creation_date)s"
+msgstr ""
+"Автор: <a href=\"%(poster_url)s\">%(username)s</a> от %(creation_date)s"
 
 #: .\templates\machina\forum_conversation\post_create.html:54
 #: .\templates\machina\forum_conversation\topic_detail.html:56
@@ -530,13 +536,12 @@ msgstr "Обновлено"
 
 #: .\templates\machina\forum_conversation\topic_detail.html:76
 msgid "on"
-msgstr ""
+msgstr "в"
 
 #: .\templates\machina\forum_conversation\topic_detail.html:76
 #, python-format
 msgid "edited %(counter)s time in total."
-msgid_plural ""
-"edited %(counter)s times in total."
+msgid_plural "edited %(counter)s times in total."
 msgstr[0] "не отредактировано ни разу."
 msgstr[1] "отредактировано всего %(counter)s раз."
 msgstr[2] "отредактировано всего %(counter)s раза."
@@ -599,17 +604,17 @@ msgid ""
 msgid_plural ""
 "<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>Posts</small></p>"
-
-msgstr[0] "<h2><strong>%(counter)s</strong></h2>\n"
+msgstr[0] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>сообщений</small></p>"
-
-msgstr[1] "<h2><strong>%(counter)s</strong></h2>\n"
+msgstr[1] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>сообщение</small></p>"
-
-msgstr[2] "<h2><strong>%(counter)s</strong></h2>\n"
+msgstr[2] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>сообщения</small></p>"
-
-msgstr[3] "<h2><strong>%(counter)s</strong></h2>\n"
+msgstr[3] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>сообщений</small></p>"
 
 #: .\templates\machina\forum_member\forum_profile_detail.html:50
@@ -620,17 +625,17 @@ msgid ""
 msgid_plural ""
 "<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>Topics</small></p>"
-
-msgstr[0] "<h2><strong>%(counter)s</strong></h2>\n"
+msgstr[0] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>тем</small></p>"
-
-msgstr[1] "<h2><strong>%(counter)s</strong></h2>\n"
+msgstr[1] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>тема</small></p>"
-
-msgstr[2] "<h2><strong>%(counter)s</strong></h2>\n"
+msgstr[2] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>темы</small></p>"
-
-msgstr[3] "<h2><strong>%(counter)s</strong></h2>\n"
+msgstr[3] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
 "                    <p><small>тем</small></p>"
 
 #: .\templates\machina\forum_member\forum_profile_detail.html:64
@@ -658,10 +663,8 @@ msgstr "Темы, на которые вы подписаны"
 
 #: .\templates\machina\forum_member\subscription_topic_list.html:17
 #, python-format
-
 msgid "%(counter)s topic found"
 msgid_plural "%(counter)s topics found"
-
 msgstr[0] "найдено %(counter)s тем"
 msgstr[1] "найдена %(counter)s тема"
 msgstr[2] "надены %(counter)s темы"
@@ -704,13 +707,9 @@ msgstr "написал %(username)s"
 #, python-format
 msgid "%(counter)s post found"
 msgid_plural "%(counter)s posts found"
-
 msgstr[0] "найдено %(counter)s сообщений"
-
 msgstr[1] "найдено %(counter)s сообщение"
-
 msgstr[2] "найдено %(counter)s сообщения"
-
 msgstr[3] "найдено %(counter)s сообщений"
 
 #: .\templates\machina\forum_member\user_posts_list.html:24
@@ -851,9 +850,31 @@ msgstr "Нет непрочитанных тем"
 msgid "Forum index"
 msgstr "Все форумы"
 
+#: .\templates\map.html:14
+msgid "Map of your achivements"
+msgstr "Карта ваших достижений"
+
+#: .\templates\map.html:15
+msgid "Color, chess piece, and number show your progress on specific quiz."
+msgstr ""
+"Цвет, шахматная фигура и число показывают ваше продвижение на данном тесте в "
+"процентах."
+
+#: .\templates\map.html:17
+msgid "Pop-up text names the quiz."
+msgstr "Всплывающая подсказка показывает название теста."
+
+#: .\templates\map.html:18
+msgid "Click the button to see details about the quiz."
+msgstr "Нажмите кнопку, чтобы получить детальную информацию о данном тесте."
+
 #: .\templates\msg.html:8
 msgid "OK, get me HOME"
 msgstr "Ладно, поехали домой"
+
+#: .\templates\news.html:24
+msgid "(current)"
+msgstr "(текущая страница)"
 
 #: .\templates\other.html:6
 msgid "Our Laureates"
@@ -867,6 +888,24 @@ msgstr "Пользователь"
 msgid "Quizes passed"
 msgstr "Успешные тесты"
 
+#: .\templates\pre_final.html:5 .\templates\pre_final.html:12
+msgid "answered"
+msgstr "отвечено"
+
+#: .\templates\pre_final.html:16
+msgid "Go Final"
+msgstr "Перейти к финальному листу"
+
+#: .\templates\pre_final.html:18
+msgid "back to exam"
+msgstr "вернуться к экзамену"
+
+#: .\templates\pre_quiz.html:10
+#, fuzzy
+#| msgid "back to exam"
+msgid "Go exam"
+msgstr "вернуться к экзамену"
+
 #: .\templates\zinnia\base.html:17 .\templates\zinnia\skeleton.html:36
 msgid "RSS feed of last entries"
 msgstr "RSS:последние сообщения"
@@ -874,6 +913,10 @@ msgstr "RSS:последние сообщения"
 #: .\templates\zinnia\base.html:18
 msgid "RSS feed of last discussions"
 msgstr "RSS:последние обсуждения"
+
+#: .\templates\zinnia\base.html:23
+msgid "Blog"
+msgstr "Блог"
 
 #: .\templates\zinnia\base.html:29
 #, fuzzy
@@ -970,3 +1013,18 @@ msgstr ""
 "С помощью <a href=\"http://www.djangoproject.com\">Django</a> и <a href="
 "\"https://github.com/Fantomas42/django-blog-zinnia\">Zinnia "
 "%(ZINNIA_VERSION)s</a>."
+
+msgid "Start new exam"
+msgstr "Начать тест"
+
+#~ msgid "Map"
+#~ msgstr "Карта"
+
+#~ msgid "Look at previous ones"
+#~ msgstr "Посмотреть историю"
+
+#~ msgid "You can read about Feldman-Club in the Blog here"
+#~ msgstr "Вы можете прочитать о Клубе подробнее в нашем Блоге"
+
+#~ msgid "Your Diplomas"
+#~ msgstr "Ваши Сертификаты"

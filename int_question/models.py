@@ -4,6 +4,9 @@ from django.utils.translation import ugettext as _
 from django.db import models
 from quiz.models import Question
 
+from django.views.generic.detail import DetailView
+
+
 
 class Int_Question(Question):
     correct = models.IntegerField(blank=False,
@@ -30,4 +33,4 @@ class Int_Question(Question):
     class Meta:
         verbose_name = _("Integer Question")
         verbose_name_plural = _("Integer Questions")
-        ordering = ['category']
+        ordering = ['category','sub_category']

@@ -596,7 +596,7 @@ class Question(models.Model):
     class Meta:
         verbose_name = _("Question")
         verbose_name_plural = _("Questions")
-        ordering = ['category']
+        ordering = ['category','sub_category']
 
     def __str__(self):
         return self.content

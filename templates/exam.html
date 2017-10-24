@@ -1,0 +1,29 @@
+{% extends "base2.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<h1>{% trans 'Welcome' %}!</h1>
+{{question}}<br>
+<img src="{{MEDIA_URL}}{{question.figure}}"/>
+<hr>
+<form action="/quiz/exam/next/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+<hr>
+current = {{current}} <br>
+n = {{n}}
+<a href="/quiz/exam/prev/">
+  {% trans 'previous' %}
+</a> |
+
+<a href="/quiz/pre_final/">
+  {% trans 'pre-final' %}
+</a>|
+
+<a href="/quiz/exam/next/">
+  {% trans 'next' %}
+</a>
+{% endblock %}

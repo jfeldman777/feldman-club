@@ -1,0 +1,12 @@
+{% extends "base2.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<h1>{% trans 'Welcome' %}!</h1>
+{{qs}}
+<h3>
+<a href="/quiz/exam/">
+  {% trans 'Start new exam' %}!</a>
+</h3>
+{% endblock %}
