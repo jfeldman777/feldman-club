@@ -6,6 +6,13 @@ from int_question.models import Int_Question
 from .forms import MyIntForm
 from club.models import ExamEvent
 
+def progress(request):
+
+    return render(request,'pre_quiz.html',
+                {'qs':qs,
+                })    
+
+
 def pre_quiz(request,slug):
     request.session.set_expiry(3600)
     quiz = Quiz.objects.get(url = slug)
