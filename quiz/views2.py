@@ -6,18 +6,16 @@ from int_question.models import Int_Question
 from .forms import MyIntForm
 from club.models import ExamEvent
 
-def progress(request):
-
-    return render(request,'pre_quiz.html',
-                {'qs':qs,
-                })    
-
+from random import shuffle
 
 def pre_quiz(request,slug):
     request.session.set_expiry(3600)
     quiz = Quiz.objects.get(url = slug)
     request.session['quiz'] = quiz.id
-    q_list = Int_Question.objects.filter(quiz = quiz)
+    q_list = list(Int_Question.objects.filter(quiz = quiz))
+
+    shuffle(q_list) #always!
+
     qn_list = [x.id for x in q_list]
     request.session['qn_list'] = qn_list
     cor_list = [x.correct for x in q_list]
