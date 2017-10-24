@@ -2,9 +2,10 @@
 {% load i18n %}
 
 {% block content %}
-
-<h1>{% trans 'Welcome' %}!</h1>
-{{question}}<br>
+<h3>{{quiz.title}}</h3>
+<p>{{quiz.description}}</p>
+<img src="{{MEDIA_URL}}{{quiz.figure}}"/>
+<p>{{question}}</p>
 <img src="{{MEDIA_URL}}{{question.figure}}"/>
 <hr>
 <form action="/quiz/exam/next/" method="post">
@@ -13,8 +14,6 @@
     <input type="submit" value="Submit" />
 </form>
 <hr>
-current = {{current}} <br>
-n = {{n}}
 <a href="/quiz/exam/prev/">
   {% trans 'previous' %}
 </a> |

@@ -7,7 +7,7 @@ from .forms import MyIntForm
 from club.models import ExamEvent
 
 def pre_quiz(request,slug):
-    request.session.set_expiry(25920) #3 days/10
+    request.session.set_expiry(3600)
     quiz = Quiz.objects.get(url = slug)
     request.session['quiz'] = quiz.id
     q_list = Int_Question.objects.filter(quiz = quiz)
@@ -21,7 +21,7 @@ def pre_quiz(request,slug):
     ans_list = [None]*n
     request.session['ans_list'] = ans_list
 
-    qs = slug
+    qs = quiz
 
     return render(request,'pre_quiz.html',
                 {'qs':qs,
@@ -34,7 +34,9 @@ def exam_next(request):
     return exam(request,1)
 
 def exam(request, shift = 0):
-    quiz = request.session.get('quiz')
+    qz = request.session.get('quiz')
+    quiz = Quiz.objects.get(id = qz)
+
     qn_list = request.session.get('qn_list')
 
     n = len (qn_list)
@@ -60,7 +62,8 @@ def exam(request, shift = 0):
                 {'current':current,
                     'n':n,
                     'question':q,
-                    'form': form
+                    'form': form,
+                    'quiz':quiz
                 })
 
 def pre_final(request):

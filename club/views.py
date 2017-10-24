@@ -6,18 +6,20 @@ from django.shortcuts import render, redirect
 from .forms import SignUpForm
 from django.contrib.auth.models import User
 from quiz.models import Sitting, Quiz
-from .models import NewsRecord
+from .models import NewsRecord, ExamEvent
 
 from collections import Counter
 from operator import itemgetter
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def score(quiz,user):
-    qs = Sitting.objects.filter(quiz = quiz, user = user)
+    #qs = Sitting.objects.filter(quiz = quiz, user = user)
+
+    qs = ExamEvent.objects.filter(quiz = quiz, user = user)
     m = 0
     for x in qs:
-        if x.get_percent_correct > m:
-            m = x.get_percent_correct
+        if x.result > m:
+            m = x.result
     return m
 
 
