@@ -66,6 +66,9 @@ class SubCategory(models.Model):
 
 @python_2_unicode_compatible
 class Quiz(models.Model):
+    code = models.CharField(
+        verbose_name=_("Code"),
+        max_length=4, blank=True)
 
     title = models.CharField(
         verbose_name=_("Title"),
@@ -163,7 +166,7 @@ class Quiz(models.Model):
     class Meta:
         verbose_name = _("Quiz")
         verbose_name_plural = _("Quizzes")
-        ordering = ['category','subcategory']
+        ordering = ['code','category','subcategory']
 
     def __str__(self):
         return self.title
