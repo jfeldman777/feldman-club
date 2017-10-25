@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-24 19:35+0300\n"
+"POT-Creation-Date: 2017-10-25 19:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,65 +36,60 @@ msgstr "Целочисленный вопрос"
 msgid "Integer Questions"
 msgstr "Целочисленный вопрос"
 
-#: .\templates\base1.html:25
+#: .\templates\base1.html:28
 msgid "LOGOUT"
 msgstr "Выйти"
 
-#: .\templates\base1.html:30
+#: .\templates\base1.html:33
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: .\templates\base1.html:45 .\templates\final.html:27
+#: .\templates\base1.html:48 .\templates\final.html:27
 msgid "Home"
 msgstr "Домой"
 
-#: .\templates\base1.html:52
+#: .\templates\base1.html:55
 msgid "Theory"
 msgstr "Теория"
 
-#: .\templates\base1.html:60 .\templates\final.html:24
+#: .\templates\base1.html:63 .\templates\final.html:24
 msgid "Help"
 msgstr "Решебник"
 
-#: .\templates\base1.html:66 .\templates\index.html:16 .\templates\news.html:6
+#: .\templates\base1.html:69 .\templates\index.html:16 .\templates\news.html:6
 msgid "News"
 msgstr "Новости"
 
-#: .\templates\base1.html:72
+#: .\templates\base1.html:75
 #: .\templates\machina\forum_moderation\moderation_queue\list.html:35
 msgid "Forum"
 msgstr "Форум"
 
-#: .\templates\base1.html:77
+#: .\templates\base1.html:80
 msgid "Start from here!"
 msgstr "Начните отсюда!"
 
-#: .\templates\base1.html:78 .\templates\final.html:21
+#: .\templates\base1.html:81 .\templates\final.html:21
 msgid "Map of your progress"
 msgstr "Карта ваших достижений"
 
-#: .\templates\base1.html:84
+#: .\templates\base1.html:87
 msgid "History of your progress"
 msgstr "История ваших достижений"
 
-#: .\templates\base1.html:89
+#: .\templates\base1.html:92
 msgid "Other laureates"
 msgstr "Другие Лауреаты"
 
-#: .\templates\exam.html:6 .\templates\index.html:6
-#: .\templates\pre_final.html:7 .\templates\pre_quiz.html:6
-msgid "Welcome"
-msgstr "Добро пожаловать"
-
-#: .\templates\exam.html:19
+#: .\templates\exam.html:18
 msgid "previous"
 msgstr "назад"
 
-#: .\templates\exam.html:23
+#: .\templates\exam.html:22 .\templates\pre_final.html:7
 msgid "pre-final"
 msgstr "пред-финальный лист"
 
-#: .\templates\exam.html:27
+#: .\templates\exam.html:26
 msgid "next"
 msgstr "вперед"
 
@@ -103,19 +98,20 @@ msgid "wrong"
 msgstr "неверно"
 
 #: .\templates\final.html:6
-#, fuzzy
-#| msgid "Correct"
 msgid "correct"
-msgstr "Правильный ответ"
+msgstr "правильно"
 
 #: .\templates\final.html:7 .\templates\pre_final.html:6
-#: .\templates\pre_final.html:10
 msgid "missed"
 msgstr "пропущено"
 
 #: .\templates\final.html:8
 msgid "Final"
 msgstr "Финальный лист"
+
+#: .\templates\index.html:6
+msgid "Welcome"
+msgstr "Добро пожаловать"
 
 #: .\templates\index.html:10
 msgid "This is Feldman-Club site"
@@ -888,7 +884,7 @@ msgstr "Пользователь"
 msgid "Quizes passed"
 msgstr "Успешные тесты"
 
-#: .\templates\pre_final.html:5 .\templates\pre_final.html:12
+#: .\templates\pre_final.html:5
 msgid "answered"
 msgstr "отвечено"
 
@@ -900,11 +896,13 @@ msgstr "Перейти к финальному листу"
 msgid "back to exam"
 msgstr "вернуться к экзамену"
 
-#: .\templates\pre_quiz.html:10
-#, fuzzy
-#| msgid "back to exam"
-msgid "Go exam"
-msgstr "вернуться к экзамену"
+#: .\templates\pre_quiz.html:6
+msgid "Quiz"
+msgstr ""
+
+#: .\templates\pre_quiz.html:12
+msgid "Start new exam"
+msgstr "Начать тест"
 
 #: .\templates\zinnia\base.html:17 .\templates\zinnia\skeleton.html:36
 msgid "RSS feed of last entries"
@@ -1014,8 +1012,10 @@ msgstr ""
 "\"https://github.com/Fantomas42/django-blog-zinnia\">Zinnia "
 "%(ZINNIA_VERSION)s</a>."
 
-msgid "Start new exam"
-msgstr "Начать тест"
+#, fuzzy
+#~| msgid "back to exam"
+#~ msgid "Go exam"
+#~ msgstr "вернуться к экзамену"
 
 #~ msgid "Map"
 #~ msgstr "Карта"

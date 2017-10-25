@@ -5,11 +5,11 @@
 <a href="#" class="btn btn-block btn-info">{% trans 'answered' %}</a>
 <a href="#" class="btn btn-block btn-default">{% trans 'missed' %}</a>
 <h1>{% trans 'pre-final' %}</h1>
-{% for x in mis_list %}
+{% for x,i in mis_list %}
 {% if x %}
-<a href="#" class="btn btn-block btn-default">{% trans 'missed' %}</a>
+<a href="#" class="btn btn-block btn-default">{{i}}</a>
 {% else %}
-<a href="#" class="btn btn-block btn-info">{% trans 'answered' %}</a>
+<a href="#" class="btn btn-block btn-info">{{i}}</a>
 {% endif %}
 {% endfor %}
 <h3>

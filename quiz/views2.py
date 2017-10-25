@@ -76,12 +76,14 @@ def pre_final(request):
     cor_list = request.session.get('cor_list')
     current = request.session.get('current')
 
-    n = len(cor_list)
-    mis_list = [False]*n
+    n = len(ans_list)
+    mis_list = []
 
     for i in range(n):
         if ans_list[i] is None:
-            mis_list[i] = True
+            mis_list.append([True,i+1])
+        else:
+            mis_list.append([False,i+1])
 
     return render(request,'pre_final.html',
                 {'mis_list':mis_list,
