@@ -65,6 +65,18 @@ title="{{x.name}}">
 <span class="glyphicon glyphicon-{{x.piece}}">
 </span>{{x.score}} </a>
 """
+
+def quiz_table(request):
+    qs = list(Quiz.objects.all())
+    qq = []
+    for i in range(len(qs)):
+        x = qs[i]
+        qq.append([x,score(x, request.user),i+1])
+
+    return render(request,'quiz_table.html',
+                {'qq':qq,
+                })
+
 def news(request):
     x_list = NewsRecord.objects.all()
     page = request.GET.get('page', 1)

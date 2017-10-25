@@ -1,0 +1,46 @@
+{% extends "base1.html" %}
+{% load i18n %}
+
+{% block content %}
+<h2>
+{% trans 'Our Laureates' %}
+</h2>
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>{% trans 'Quiz' %}
+        </th>
+        <th>{% trans 'Category' %}
+          </th>
+          <th>{% trans 'Sub-category' %}
+            </th>
+      <th>{% trans 'Your score' %}</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for x,y,z in qq %}
+
+    <tr>
+  <th scope="row">
+    {{z}}</th>
+  <td>
+       {{x.title}}
+  </td>
+  <td>
+       {{x.category}}
+  </td>
+  <td>
+       {{x.subcategory}}
+  </td>
+  <td>
+    <a href="/quiz/{{x.url}}/" title="{% trans 'start exam' %}">
+  {{y}}</a>
+</td>
+</tr>
+  {% endfor %}
+</tbody>
+</table>
+
+</p>
+{% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 20:59+0300\n"
+"POT-Creation-Date: 2017-10-25 22:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,10 +74,10 @@ msgid "Map of your progress"
 msgstr "Карта ваших достижений"
 
 #: .\templates\base1.html:87
-msgid "History of your progress"
-msgstr "История ваших достижений"
+msgid "Table of your progress"
+msgstr "Таблица ваших достижений"
 
-#: .\templates\base1.html:92
+#: .\templates\base1.html:93
 msgid "Other laureates"
 msgstr "Другие Лауреаты"
 
@@ -876,7 +876,7 @@ msgstr "Ладно, поехали домой"
 msgid "(current)"
 msgstr "(текущая страница)"
 
-#: .\templates\other.html:6
+#: .\templates\other.html:6 .\templates\quiz_table.html:6
 msgid "Our Laureates"
 msgstr "Наши Лауреаты"
 
@@ -904,12 +904,28 @@ msgstr "Подвести итоги"
 msgid "back to exam"
 msgstr "вернуться к экзамену"
 
-#: .\templates\pre_quiz.html:6
+#: .\templates\pre_quiz.html:6 .\templates\quiz_table.html:12
 msgid "Quiz"
 msgstr "Тест"
 
 #: .\templates\pre_quiz.html:12
 msgid "Start new exam"
+msgstr "Начать тест"
+
+#: .\templates\quiz_table.html:14
+msgid "Category"
+msgstr "Категория"
+
+#: .\templates\quiz_table.html:16
+msgid "Sub-category"
+msgstr "Суб-категория"
+
+#: .\templates\quiz_table.html:18
+msgid "Your score"
+msgstr "Ваш результат"
+
+#: .\templates\quiz_table.html:37
+msgid "start exam"
 msgstr "Начать тест"
 
 #: .\templates\zinnia\base.html:17 .\templates\zinnia\skeleton.html:36
@@ -1019,6 +1035,9 @@ msgstr ""
 "С помощью <a href=\"http://www.djangoproject.com\">Django</a> и <a href="
 "\"https://github.com/Fantomas42/django-blog-zinnia\">Zinnia "
 "%(ZINNIA_VERSION)s</a>."
+
+#~ msgid "History of your progress"
+#~ msgstr "История ваших достижений"
 
 #~ msgid "correct"
 #~ msgstr "правильно"
