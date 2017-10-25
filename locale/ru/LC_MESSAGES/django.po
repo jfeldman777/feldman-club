@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 19:29+0300\n"
+"POT-Creation-Date: 2017-10-25 20:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Answer must be an integer number"
 msgstr "Ответом должно быть целое число"
 
-#: .\int_question\models.py:16
+#: .\int_question\models.py:16 .\templates\final.html:6
 msgid "Correct"
 msgstr "Правильный ответ"
 
@@ -85,11 +85,19 @@ msgstr "Другие Лауреаты"
 msgid "previous"
 msgstr "назад"
 
-#: .\templates\exam.html:22 .\templates\pre_final.html:7
-msgid "pre-final"
-msgstr "пред-финальный лист"
+#: .\templates\exam.html:22
+msgid "I am done and want to check up"
+msgstr "Я закончил и хочу подвести итоги"
+
+#: .\templates\exam.html:24
+msgid "question"
+msgstr "вопрос"
 
 #: .\templates\exam.html:26
+msgid "from"
+msgstr "из"
+
+#: .\templates\exam.html:30
 msgid "next"
 msgstr "вперед"
 
@@ -97,17 +105,13 @@ msgstr "вперед"
 msgid "wrong"
 msgstr "неверно"
 
-#: .\templates\final.html:6
-msgid "correct"
-msgstr "правильно"
-
 #: .\templates\final.html:7 .\templates\pre_final.html:6
 msgid "missed"
 msgstr "пропущено"
 
 #: .\templates\final.html:8
 msgid "Final"
-msgstr "Финальный лист"
+msgstr "Итоги"
 
 #: .\templates\index.html:6
 msgid "Welcome"
@@ -888,9 +892,13 @@ msgstr "Успешные тесты"
 msgid "answered"
 msgstr "отвечено"
 
+#: .\templates\pre_final.html:7
+msgid "pre-final"
+msgstr "предварительный итог"
+
 #: .\templates\pre_final.html:16
 msgid "Go Final"
-msgstr "Перейти к финальному листу"
+msgstr "Подвести итоги"
 
 #: .\templates\pre_final.html:18
 msgid "back to exam"
@@ -898,7 +906,7 @@ msgstr "вернуться к экзамену"
 
 #: .\templates\pre_quiz.html:6
 msgid "Quiz"
-msgstr ""
+msgstr "Тест"
 
 #: .\templates\pre_quiz.html:12
 msgid "Start new exam"
@@ -1011,6 +1019,9 @@ msgstr ""
 "С помощью <a href=\"http://www.djangoproject.com\">Django</a> и <a href="
 "\"https://github.com/Fantomas42/django-blog-zinnia\">Zinnia "
 "%(ZINNIA_VERSION)s</a>."
+
+#~ msgid "correct"
+#~ msgstr "правильно"
 
 #, fuzzy
 #~| msgid "back to exam"

@@ -18,10 +18,14 @@
   {% trans 'previous' %}
 </a> |
 
-<a href="/quiz/pre_final/">
-  {% trans 'pre-final' %}
+<a href="/quiz/pre_final/"><b>
+  {% trans 'I am done and want to check up' %}</b>
 </a>|
-
+{% trans 'question' %}
+<b>{{current}}</b>
+{% trans 'from' %}
+<b>{{n}}</b>
+|
 <a href="/quiz/exam/next/">
   {% trans 'next' %}
 </a>

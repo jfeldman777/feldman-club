@@ -28,6 +28,8 @@ def pre_quiz(request,slug):
 
     qs = quiz
 
+    request.session['current'] = 0
+
     return render(request,'pre_quiz.html',
                 {'qs':qs,
                 })
@@ -46,10 +48,7 @@ def exam(request, shift = 0):
 
     n = len (qn_list)
 
-    if request.session.get('current') == None:
-        current = request.session['current'] = 0
-    else:
-        current = request.session.get('current')
+    current = request.session.get('current')
 
     if request.method == 'POST':
         form = MyIntForm(request.POST)
@@ -64,7 +63,7 @@ def exam(request, shift = 0):
     q = Int_Question.objects.get(id = qn_list[current])
 
     return render(request,'exam.html',
-                {'current':current,
+                {'current':current+1,
                     'n':n,
                     'question':q,
                     'form': form,
