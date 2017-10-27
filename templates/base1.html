@@ -21,8 +21,8 @@
     {% else %}
       {{ form.username.label_tag }}
       {{ user }}
-
-{{ user.email|gravatar:40 }}
+<a href='http://gravatar.com' title="go get gravatar" target="gravatar">
+{{ user.email|gravatar:40 }}</a>
 
 <a href="{% url 'logout' %}" class="btn btn-primary">
   {% trans 'LOGOUT' %}
