@@ -115,4 +115,5 @@ def final(request):
 
     return render(request,'final.html',
                 {'xi_list':xi_list,
+                'quiz':quiz
                 })
