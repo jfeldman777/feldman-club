@@ -53,7 +53,7 @@ class MyQuizScore:
         self.piece = p
 
 def map(request):
-    qs1 = Quiz.objects.all()
+    qs1 = Quiz.objects.filter(draft=False)
     qs = [MyQuizScore(x,request.user) for x in qs1]
 
     return render(request,'map.html',
@@ -67,7 +67,7 @@ title="{{x.name}}">
 """
 
 def quiz_table(request):
-    qs = list(Quiz.objects.all())
+    qs = list(Quiz.objects.filter(draft=False))
     qq = []
     for i in range(len(qs)):
         x = qs[i]

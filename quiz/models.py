@@ -24,6 +24,15 @@ class CategoryManager(models.Manager):
         new_category.save()
         return new_category
 
+class SubcategoryManager(models.Manager):
+
+    def new_subcategory(self, subcategory):
+        new_subcategory = self.create(subcategory=re.sub('\s+', '-', subcategory)
+                                   .lower())
+
+        new_subcategory.save()
+        return new_subcategory
+
 
 @python_2_unicode_compatible
 class Category(models.Model):
@@ -47,18 +56,18 @@ class Category(models.Model):
 class SubCategory(models.Model):
 
     sub_category = models.CharField(
-        verbose_name=_("Sub-Category"),
+        verbose_name=_("Subсategory"),
         max_length=250, blank=True, null=True)
 
     category = models.ForeignKey(
         Category, null=True, blank=True,
         verbose_name=_("Category"))
 
-    objects = CategoryManager()
+    objects = SubcategoryManager()
 
     class Meta:
-        verbose_name = _("Sub-Category")
-        verbose_name_plural = _("Sub-Categories")
+        verbose_name = _("Subсategory")
+        verbose_name_plural = _("Subсategories")
 
     def __str__(self):
         return self.sub_category + " (" + self.category.category + ")"
@@ -94,7 +103,7 @@ class Quiz(models.Model):
 
     subcategory = models.ForeignKey(
         SubCategory, null=True, blank=True,
-        verbose_name=_("SubCategory"))
+        verbose_name=_("Subсategory"))
 
     random_order = models.BooleanField(
         blank=False, default=False,

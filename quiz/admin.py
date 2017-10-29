@@ -60,7 +60,7 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('category', )
 
 
-class SubCategoryAdmin(admin.ModelAdmin):
+class SubcategoryAdmin(admin.ModelAdmin):
     search_fields = ('sub_category', )
     list_display = ('sub_category', 'category',)
     list_filter = ('category',)
@@ -106,7 +106,7 @@ class EssayQuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Quiz, QuizAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(SubCategory, SubCategoryAdmin)
+admin.site.register(SubCategory, SubcategoryAdmin)
 admin.site.register(MCQuestion, MCQuestionAdmin)
 admin.site.register(Progress, ProgressAdmin)
 admin.site.register(TF_Question, TFQuestionAdmin)
