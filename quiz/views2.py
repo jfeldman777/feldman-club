@@ -56,7 +56,14 @@ def exam(request, shift = 0):
             answer = form.cleaned_data['answer']
             request.session['ans_list'][current] = answer
 
-    current = (current + shift) % n
+
+
+    current = (current + shift) % (n+1)
+
+    if current == n:
+        request.session['current'] = 0
+        return pre_final(request)
+
     request.session['current'] = current
     a = request.session.get('ans_list')[current]
     form = MyIntForm(initial = {'answer':a})
