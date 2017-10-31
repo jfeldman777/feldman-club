@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 22:15+0300\n"
+"POT-Creation-Date: 2017-10-31 21:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -876,7 +876,7 @@ msgstr "Ладно, поехали домой"
 msgid "(current)"
 msgstr "(текущая страница)"
 
-#: .\templates\other.html:6 .\templates\quiz_table.html:6
+#: .\templates\other.html:6
 msgid "Our Laureates"
 msgstr "Наши Лауреаты"
 
@@ -911,6 +911,10 @@ msgstr "Тест"
 #: .\templates\pre_quiz.html:12
 msgid "Start new exam"
 msgstr "Начать тест"
+
+#: .\templates\quiz_table.html:6
+msgid "Table of your achivements"
+msgstr "Таблица ваших достижений"
 
 #: .\templates\quiz_table.html:14
 msgid "Category"
