@@ -10,6 +10,9 @@
     <tr>
       <th>#</th>
       <th>{% trans 'User' %}
+      </th>
+    <th>
+      username
         </th>
       <th>{% trans 'Quizes passed' %}</th>
     </tr>
@@ -21,6 +24,8 @@
   <th scope="row">{{z}}</th>
   <td>
        {{x.get_full_name}}
+  </td><td>
+       {{x}}
   </td><td>
   {{y}}
 </td>
