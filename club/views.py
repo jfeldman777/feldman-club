@@ -122,7 +122,7 @@ def other(request):
 
     tab = []
     for i in range(len(user_done_list)):
-        t = [user_done_list[i][0],user_done_list[i][1],i+1,100*user_done_list[i][1]/nq]
+        t = [user_done_list[i][0],user_done_list[i][1],i+1,100*user_done_list[i][1]//nq]
         tab.append(t)
 
 
