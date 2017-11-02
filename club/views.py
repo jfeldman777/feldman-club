@@ -104,27 +104,30 @@ def password_reset_done(request):
     return msg(request, 'Your password was changed successfully!')
 
 def other(request):
+    qq = list(Quiz.objects.filter(draft=False))
+    nq = len(qq)
+
     qs = set()
     if not request.user.is_anonymous:
         ks = ExamEvent.objects.all()
 
-        for x in ks:
-            if x.result >= 99:
-                y = (x.user,x.quiz)
-                qs.add(y)
+        for exam in ks:
+            if exam.result >= 99:
+                pair = (exam.user,exam.quiz)
+                qs.add(pair)
 
-    q1 = [x for x,y in qs]
-    d = Counter(q1)
-    q2 = sorted(d.items(), key=itemgetter(1), reverse = True)
+    qz_done_cases = [user for user,quiz in qs]
+    dic = Counter(qz_done_cases)
+    user_done_list = sorted(dic.items(), key=itemgetter(1), reverse = True)
 
-    q3 = []
-    for i in range(len(q2)):
-        t = [q2[i][0],q2[i][1],i+1]
-        q3.append(t)
+    tab = []
+    for i in range(len(user_done_list)):
+        t = [user_done_list[i][0],user_done_list[i][1],i+1,100*user_done_list[i][1]/nq]
+        tab.append(t)
 
 
     return render(request,'other.html',
-        {'qzs':q3,
+        {'qzs':tab,
         })
 
 
