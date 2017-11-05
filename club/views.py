@@ -103,6 +103,32 @@ def password_change_done(request):
 def password_reset_done(request):
     return msg(request, 'Your password was changed successfully!')
 
+def hard_quiz(request):
+    qq = list(Quiz.objects.filter(draft=False))
+    nq = len(qq)
+
+    qs = set()
+    if not request.user.is_anonymous:
+        ks = ExamEvent.objects.all()
+
+        for exam in ks:
+            if exam.result >= 99:
+                pair = (exam.user,exam.quiz)
+                qs.add(pair)
+
+    qz_done_cases = [quiz for user,quiz in qs]
+    dic = Counter(qz_done_cases)
+    quiz_done_list = sorted(dic.items(), key=itemgetter(1))
+
+    tab = []
+    for i in range(len(quiz_done_list)):
+        t = [quiz_done_list[i][0],quiz_done_list[i][1],i+1]
+        tab.append(t)
+
+    return render(request,'hard_quiz.html',
+        {'qzs':tab,
+        })
+
 def other(request):
     qq = list(Quiz.objects.filter(draft=False))
     nq = len(qq)

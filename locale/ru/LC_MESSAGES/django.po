@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-01 21:39+0300\n"
+"POT-Creation-Date: 2017-11-05 21:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,6 +81,10 @@ msgstr "Таблица ваших достижений"
 msgid "Other laureates"
 msgstr "Другие Лауреаты"
 
+#: .\templates\base1.html:99 .\templates\hard_quiz.html:6
+msgid "Hard quizes"
+msgstr "Трудные тесты"
+
 #: .\templates\exam.html:18
 msgid "previous"
 msgstr "назад"
@@ -112,6 +116,15 @@ msgstr "пропущено"
 #: .\templates\final.html:8
 msgid "Final"
 msgstr "Итоги"
+
+#: .\templates\hard_quiz.html:12 .\templates\pre_quiz.html:6
+#: .\templates\quiz_table.html:12
+msgid "Quiz"
+msgstr "Тест"
+
+#: .\templates\hard_quiz.html:14
+msgid "Users passed"
+msgstr "Успешные пользователи"
 
 #: .\templates\index.html:6
 msgid "for new visitors"
@@ -888,7 +901,7 @@ msgstr "Наши Лауреаты"
 msgid "User"
 msgstr "Пользователь"
 
-#: .\templates\other.html:14
+#: .\templates\other.html:17
 msgid "Quizes passed"
 msgstr "Успешные тесты"
 
@@ -907,10 +920,6 @@ msgstr "Подвести итоги"
 #: .\templates\pre_final.html:18
 msgid "back to exam"
 msgstr "вернуться к экзамену"
-
-#: .\templates\pre_quiz.html:6 .\templates\quiz_table.html:12
-msgid "Quiz"
-msgstr "Тест"
 
 #: .\templates\pre_quiz.html:12
 msgid "Start new exam"

@@ -1,0 +1,33 @@
+{% extends "base1.html" %}
+{% load i18n %}
+
+{% block content %}
+<h2>
+{% trans 'Hard quizes' %}
+</h2>
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>{% trans 'Quiz' %}
+      </th>
+      <th>{% trans 'Users passed' %}</th>
+      </tr>
+  </thead>
+  <tbody>
+  {% for x,y,z in qzs %}
+
+    <tr>
+  <th scope="row">{{z}}</th>
+  <td>
+       {{x}}
+  </td><td>
+  {{y}}
+    </td>
+</tr>
+  {% endfor %}
+</tbody>
+</table>
+
+</p>
+{% endblock %}
