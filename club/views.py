@@ -105,19 +105,22 @@ def password_reset_done(request):
 
 def hard_quiz(request):
     qq = list(Quiz.objects.filter(draft=False))
-    nq = len(qq)
 
     qs = set()
-    if not request.user.is_anonymous:
-        ks = ExamEvent.objects.all()
+    ks = ExamEvent.objects.all()
 
-        for exam in ks:
-            if exam.result >= 99:
-                pair = (exam.user,exam.quiz)
-                qs.add(pair)
+    for exam in ks:
+        if exam.result >= 99:
+            pair = (exam.user,exam.quiz)
+            qs.add(pair)
 
     qz_done_cases = [quiz for user,quiz in qs]
     dic = Counter(qz_done_cases)
+
+    for x in qq:
+        if x not in dic:
+            dic[x]=0
+
     quiz_done_list = sorted(dic.items(), key=itemgetter(1))
 
     tab = []
