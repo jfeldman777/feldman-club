@@ -7,13 +7,13 @@
 <a href="#" class="btn btn-block btn-default">{% trans 'missed' %}</a>
 <h1>{% trans 'Final' %}</h1>
 
-{% for x,i in xi_list %}
+{% for x,i,qs in xi_list %}
 {% if x is None %}
-<a href="#" class="btn btn-block btn-default">{{i}}</a>
+<a href="#" class="btn btn-block btn-default" title="{{qs}}">{{i}}</a>
 {% elif x %}
 <a href="#" class="btn btn-block btn-primary">{{i}}</a>
 {% else %}
-<a href="#" class="btn btn-block btn-danger">{{i}}</a>
+<a href="#" class="btn btn-block btn-danger" title="{{qs}}">{{i}}</a>
 {% endif %}
 {% endfor %}
 <hr>

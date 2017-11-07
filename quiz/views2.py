@@ -100,6 +100,7 @@ def final(request):
     cor_list = request.session.get('cor_list')
     current = request.session.get('current')
     quiz_id = request.session.get('quiz')
+    qn_list = request.session.get('qn_list')
 
     quiz = Quiz.objects.get(id = quiz_id)
 
@@ -108,13 +109,14 @@ def final(request):
     nn = 0
 
     for i in range(n):
+        qs = Int_Question.objects.get(id=qn_list[i])
         if ans_list[i] is None:
-            xi_list.append([None,i+1])
+            xi_list.append([None,i+1,qs])
         elif ans_list[i] == cor_list[i]:
-            xi_list.append([True,i+1])
+            xi_list.append([True,i+1,qs])
             nn += 1
         else:
-            xi_list.append([False,i+1])
+            xi_list.append([False,i+1,qs])
 
     r = (100 * nn) // n
     event = ExamEvent(user = request.user, result = r, quiz = quiz)
