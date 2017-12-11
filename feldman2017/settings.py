@@ -79,6 +79,8 @@ INSTALLED_APPS = [
     'true_false',
     'essay',
     'int_question',
+
+    'treebeard',
 ] + get_machina_apps()
 
 MIDDLEWARE = [

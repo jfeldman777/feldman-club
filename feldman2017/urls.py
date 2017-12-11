@@ -38,7 +38,7 @@ urlpatterns += [
     url('^comments/', include('django_comments.urls')),
     url('^forum/', include(board.urls)),
 
-    url(r'^quiz/', include('quiz.urls')),
+    url('^quiz/', include('quiz.urls')),
 
     url('^', include('club.urls')),
 ]

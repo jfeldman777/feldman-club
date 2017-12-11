@@ -6,22 +6,44 @@ from django.shortcuts import render, redirect
 from .forms import SignUpForm
 from django.contrib.auth.models import User
 from quiz.models import Sitting, Quiz
-from .models import NewsRecord, ExamEvent
+from .models import NewsRecord, ExamEvent, MagicNode
 
 from collections import Counter
 from operator import itemgetter
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-def score(quiz,user):
-    #qs = Sitting.objects.filter(quiz = quiz, user = user)
+def topic_tree(request,id):
+    get = lambda node_id: MagicNode.objects.get(pk=node_id)
+    try:
+        node = get(id)
+    except:
+        node = MagicNode.get_first_root_node()
 
+    if node.is_root():
+        node = node.get_first_child()    
+
+    children = node.get_children()
+    parent = node.get_parent()
+    siblings = node.get_siblings()
+
+    return render(request,'topic_tree.html',
+                    {'node':node,
+                     'children':children,
+                     'parent':parent,
+                     'siblings':siblings,
+                     })
+
+def topic_search(request):
+    return render(request,'topic_search.html',
+                    { })
+
+def score(quiz,user):
     qs = ExamEvent.objects.filter(quiz = quiz, user = user)
     m = 0
     for x in qs:
         if x.result > m:
             m = x.result
     return m
-
 
 class MyQuizScore:
     def __init__(self,quiz,user):
@@ -59,12 +81,6 @@ def map(request):
     return render(request,'map.html',
                 {'qs':qs,
                 })
-"""
-<a href="/quiz/{{x.slug}}/" class="btn btn-primary btn-{{x.color}}"
-title="{{x.name}}">
-<span class="glyphicon glyphicon-{{x.piece}}">
-</span>{{x.score}} </a>
-"""
 
 def quiz_table(request):
     qs = list(Quiz.objects.filter(draft=False))
@@ -93,7 +109,6 @@ def news(request):
             {'qs':qs,
             })
 
-
 def msg(request,msg):
     return render(request, 'msg.html', {'msg': msg})
 
@@ -105,7 +120,6 @@ def password_reset_done(request):
 
 def hard_quiz(request):
     qq = list(Quiz.objects.filter(draft=False))
-
     qs = set()
     ks = ExamEvent.objects.all()
 
@@ -154,11 +168,9 @@ def other(request):
         t = [user_done_list[i][0],user_done_list[i][1],i+1,100*user_done_list[i][1]//nq]
         tab.append(t)
 
-
     return render(request,'other.html',
         {'qzs':tab,
         })
-
 
 def other_old(request):
     qs = set()
@@ -179,7 +191,6 @@ def other_old(request):
         t = [q2[i][0],q2[i][1],i+1]
         q3.append(t)
 
-
     return render(request,'other.html',
         {'qzs':q3,
         })
@@ -194,8 +205,6 @@ def index(request):
         for x in ks:
             if x.check_if_passed:
                 qzs.add(x.quiz)
-
-    #print(qzs)
 
     form = AuthenticationForm(request)
     return render(request,'index.html',

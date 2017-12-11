@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-05 21:03+0300\n"
+"POT-Creation-Date: 2017-12-07 12:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,14 +40,14 @@ msgstr "Обязательное поле. Введите свой истинн�
 msgid "Email"
 msgstr "Электронная почта"
 
-#: .\club\models.py:10
+#: .\club\models.py:12
 msgid "Title"
 msgstr "Заголовок"
 
-#: .\club\models.py:14
+#: .\club\models.py:16
 msgid "Content"
 msgstr "Сообщение"
 
-#: .\club\models.py:20
+#: .\club\models.py:22
 msgid "Figure"
 msgstr "Картинка"

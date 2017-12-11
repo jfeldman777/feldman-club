@@ -2,6 +2,8 @@ from django.db import models
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 from quiz.models import Quiz
+from smartfields import fields
+from treebeard.al_tree import AL_Node
 
 # Create your models here.
 class NewsRecord(models.Model):
@@ -28,3 +30,21 @@ class ExamEvent(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     result = models.IntegerField()
+
+class MagicNode(AL_Node):
+    parent = models.ForeignKey('self',
+                               related_name='children_set',
+                               null=True,
+                               db_index=True,on_delete=models.CASCADE)
+    sib_order = models.PositiveIntegerField()
+    desc = models.CharField(max_length=255)
+    long_desc = models.CharField(max_length=255, default='', blank=True)
+
+    text = models.TextField(
+            verbose_name=_("Text"),
+            blank=True)
+
+    video = fields.FileField(null=True)
+
+    def __str__(self):
+        return self.desc

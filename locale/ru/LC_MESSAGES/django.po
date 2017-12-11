@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-05 21:03+0300\n"
+"POT-Creation-Date: 2017-12-07 12:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,6 +85,14 @@ msgstr "Другие Лауреаты"
 msgid "Hard quizes"
 msgstr "Трудные тесты"
 
+#: .\templates\base1.html:104
+msgid "Topic Tree"
+msgstr "Дерево тем"
+
+#: .\templates\base1.html:109
+msgid "Topic Search"
+msgstr "Поиск темы"
+
 #: .\templates\exam.html:18
 msgid "previous"
 msgstr "назад"
@@ -125,6 +133,12 @@ msgstr "Тест"
 #: .\templates\hard_quiz.html:14
 msgid "Users passed"
 msgstr "Успешные пользователи"
+
+#: .\templates\hard_quiz.html:23
+#, fuzzy
+#| msgid "Hard quizes"
+msgid "Start quiz"
+msgstr "Трудные тесты"
 
 #: .\templates\index.html:6
 msgid "for new visitors"
@@ -760,6 +774,7 @@ msgid "%(topic_length)s posts found"
 msgstr "найдено %(topic_length)s сообщений"
 
 #: .\templates\machina\forum_moderation\moderation_queue\list.html:34
+#: .\templates\topic_tree.html:12
 msgid "Topic"
 msgstr "Тема"
 
@@ -944,6 +959,18 @@ msgstr "Ваш результат"
 #: .\templates\quiz_table.html:37
 msgid "start exam"
 msgstr "Начать тест"
+
+#: .\templates\topic_search.html:8
+msgid "Name search"
+msgstr "Поиск по имени"
+
+#: .\templates\topic_search.html:12
+msgid "Tag search"
+msgstr "Поиск по ярлыку"
+
+#: .\templates\topic_tree.html:8
+msgid "Navigator"
+msgstr "Навигатор"
 
 #: .\templates\zinnia\base.html:17 .\templates\zinnia\skeleton.html:36
 msgid "RSS feed of last entries"
